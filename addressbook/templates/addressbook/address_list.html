@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Company Address Book</title>
+    </head>
+    <body>
+      <div>
+          <h1><a href="/">Company Address Book</a></h1>
+      </div>
+
+      {% for post in address %}
+      <div>
+          <h1><a>{{ post.name }}</a></h1>
+          <p>{{ post.position }}</p>
+          <p>{{ post.address }}</p>
+          <p>{{ post.email }}</p>
+          <p>{{ post.number }}</p>
+          <p>{{ post.text|linebreaksbr }}</p>
+          {% if post.position != 'CEO' %}
+              <p>Manager: {{ post.manager }}</p>
+          {% endif %}
+      </div>
+    {% endfor %}
+    </body>
+</html>
